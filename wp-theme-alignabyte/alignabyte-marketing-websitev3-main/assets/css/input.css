@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 214 25% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 25% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 25% 16%;
+
+    --primary: 205 61% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 233 100% 97%;
+    --secondary-foreground: 205 61% 28%;
+
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 205 80% 75%;
+    --accent-foreground: 205 61% 28%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 60% 40%;
+    --highlight: 233 100% 97%;
+    --highlight-foreground: 205 61% 28%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 205 61% 28%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 214 25% 10%;
+    --foreground: 0 0% 95%;
+    --card: 214 25% 13%;
+    --card-foreground: 0 0% 95%;
+    --popover: 214 25% 13%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 205 61% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 233 30% 20%;
+    --secondary-foreground: 233 100% 90%;
+    --muted: 214 20% 20%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 205 80% 75%;
+    --accent-foreground: 205 61% 28%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 20% 20%;
+    --input: 214 20% 20%;
+    --ring: 205 61% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .text-accent-blue {
+    color: hsl(205 80% 75%);
+  }
+  .bg-accent-blue {
+    background-color: hsl(205 80% 75%);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(205 61% 28%), hsl(205 80% 55%));
+  }
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  .container-main {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(205 61% 28% / 0.4); }
+  50% { box-shadow: 0 0 20px 10px hsl(205 61% 28% / 0.15); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes shutter-reveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+@keyframes hero-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+/* Scroll-triggered animation classes */
+@keyframes scroll-scale-in {
+  0% { opacity: 0; transform: scale(1.12); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes scroll-slide-up {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes scroll-slide-left {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes scroll-slide-right {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes scroll-shutter {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+/* Pre-animation states (hidden until scroll trigger) */
+.sr-hidden { opacity: 0; }
+.sr-scale { opacity: 0; transform: scale(1.12); }
+.sr-slide-up { opacity: 0; transform: translateY(40px); }
+.sr-slide-left { opacity: 0; transform: translateX(-50px); }
+.sr-slide-right { opacity: 0; transform: translateX(50px); }
+.sr-shutter { clip-path: inset(0 100% 0 0); }
+
+/* Revealed states */
+.sr-scale.sr-visible { animation: scroll-scale-in 0.8s ease-out forwards; }
+.sr-slide-up.sr-visible { animation: scroll-slide-up 0.7s ease-out forwards; }
+.sr-slide-left.sr-visible { animation: scroll-slide-left 0.7s ease-out forwards; }
+.sr-slide-right.sr-visible { animation: scroll-slide-right 0.7s ease-out forwards; }
+.sr-shutter.sr-visible { clip-path: inset(0 0 0 0); animation: scroll-shutter 1s ease-out forwards; }
+
+/* Stagger delays */
+.sr-delay-1 { animation-delay: 0.1s !important; }
+.sr-delay-2 { animation-delay: 0.2s !important; }
+.sr-delay-3 { animation-delay: 0.3s !important; }
+.sr-delay-4 { animation-delay: 0.4s !important; }
+.sr-delay-5 { animation-delay: 0.5s !important; }
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.animate-shutter {
+  animation: shutter-reveal 1s ease-out forwards;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
