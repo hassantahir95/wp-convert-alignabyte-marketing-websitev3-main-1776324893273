@@ -1,0 +1,12 @@
+{
+  "name": "alignabyte-marketing-websitev3-main-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme for AlignaByte Marketing",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
